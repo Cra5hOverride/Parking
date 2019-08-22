@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_wide"
                 android:fontFamily="@font/roboto"
-                android:text=""
+                android:text="@string/empty_button"
                 android:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/car2_button"
                 app:layout_constraintEnd_toStartOf="@+id/car2_button"
@@ -40,7 +40,7 @@
                 android:layout_marginStart="@dimen/margin_wide"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text=""
+                android:text="@string/empty_button"
                 android:visibility="visible"
                 app:layout_constraintEnd_toStartOf="@+id/car3_button"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto"
-                android:text=""
+                android:text="@string/empty_button"
                 app:layout_constraintBaseline_toBaselineOf="@+id/car2_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -72,7 +72,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/brand"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/car2_button" />
+                app:layout_constraintTop_toBottomOf="@+id/car2_button"
+                tools:visibility="gone" />
 
         <EditText
                 android:id="@+id/brand"
@@ -88,7 +89,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/license_plate" />
+                app:layout_constraintTop_toBottomOf="@+id/license_plate"
+                tools:visibility="gone" />
 
         <EditText
                 android:id="@+id/name"
@@ -96,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="68dp"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
@@ -104,7 +107,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/brand"
-                android:fontFamily="@font/roboto" />
+                tools:visibility="gone" />
 
         <Button
                 android:id="@+id/update_button"
@@ -115,7 +118,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/del_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name" />
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:visibility="gone" />
 
         <Button
                 android:id="@+id/del_button"
@@ -126,7 +130,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/update_button" />
+                app:layout_constraintTop_toBottomOf="@+id/update_button"
+                tools:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

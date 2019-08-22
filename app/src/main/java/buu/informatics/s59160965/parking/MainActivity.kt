@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import buu.informatics.s59160965.parking.databinding.ActivityMainBinding
-
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,9 +40,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun addinfo(view: View) {
         binding.apply {
-            var names = if (globalVar == 1) car1?.name else if (globalVar == 2) car2?.name else car3?.name
-            var licenseplates = if (globalVar == 1) car1?.licenseplate else if (globalVar == 2) car2?.licenseplate else car3?.licenseplate
-            var brands = if (globalVar == 1) car1?.brand else if (globalVar == 2) car2?.brand else car3?.brand
+            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
+
+            name.setText(cars?.name)
+            brand.setText(cars?.brand)
+            licensePlate.setText(cars?.licenseplate)
 
             delButton.visibility = View.VISIBLE
             updateButton.visibility = View.VISIBLE
@@ -50,13 +52,19 @@ class MainActivity : AppCompatActivity() {
             licensePlate.visibility = View.VISIBLE
             brand.visibility = View.VISIBLE
 
-
-
-
         }
     }
     private fun updateinfo (view: View){
         binding.apply {
+            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
+            var button = if (globalVar == 1) car1Button else if (globalVar == 2) car2Button else car3Button
+
+            cars?.name = name.toString()
+            cars?.licenseplate = licensePlate.toString()
+            cars?.brand = brand.toString()
+            button.text = cars?.licenseplate
+            invalidateAll()
+
             delButton.visibility = View.GONE
             updateButton.visibility = View.GONE
             name.visibility = View.GONE
@@ -67,8 +75,15 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun delinfo (view: View){
-
         binding.apply {
+            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
+            var button = if (globalVar == 1) car1Button else if (globalVar == 2) car2Button else car3Button
+
+            cars?.licenseplate = ""
+            cars?.brand = ""
+            cars?.name = ""
+            button.setText("ว่าง")
+
             delButton.visibility = View.GONE
             updateButton.visibility = View.GONE
             name.visibility = View.GONE

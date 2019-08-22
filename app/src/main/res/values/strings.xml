@@ -5,4 +5,5 @@
     <string name="name">ชื่อ นามสกุล</string>
     <string name="brand">ยี่ห้อ</string>
     <string name="license_plate">ป้ายทะเบียนรถ</string>
+    <string name="empty_button">ว่าง</string>
 </resources>
