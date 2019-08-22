@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             cars?.name = name.text.toString()
             cars?.licenseplate = licensePlate.text.toString()
             cars?.brand = brand.text.toString()
-            button.text = licensePlate.text.toString()
+            button.text = if(licensePlate.text.toString()=="") "ว่าง" else licensePlate.text.toString()
             invalidateAll()
 
             Gone()
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             cars?.licenseplate = ""
             cars?.brand = ""
             cars?.name = ""
-            button.setText("ว่าง")
+            button.text = "ว่าง"
             Gone()
 
         }
@@ -99,4 +99,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
 

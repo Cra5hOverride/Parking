@@ -73,7 +73,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/car2_button"
-                tools:visibility="visible" />
+                tools:visibility="visible" tools:targetApi="o"/>
 
         <EditText
                 android:id="@+id/brand"
@@ -90,7 +90,8 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/license_plate"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
                 android:id="@+id/name"
@@ -107,7 +108,8 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/brand"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                android:autofillHints="" tools:targetApi="o"/>
 
         <Button
                 android:id="@+id/update_button"
