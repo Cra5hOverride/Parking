@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Parking</string>
+    <string name="update_button">Update</string>
+    <string name="del_button">Delete</string>
+    <string name="name">ชื่อ นามสกุล</string>
+    <string name="brand">ยี่ห้อ</string>
+    <string name="license_plate">ป้ายทะเบียนรถ</string>
 </resources>
