@@ -11,6 +11,9 @@ import buu.informatics.s59160965.parking.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     var globalVar = 0
+    private  var Car1: InfoCar = InfoCar("","","")
+    private  var Car2: InfoCar = InfoCar("","","")
+    private  var Car3: InfoCar = InfoCar("","","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -41,8 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun addinfo(view: View) {
         binding.apply {
-            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
-
+            var cars = if (globalVar == 1) Car1 else if (globalVar == 2) Car2 else Car3
+            infoCar = cars
             name.setText(cars?.name)
             brand.setText(cars?.brand)
             licensePlate.setText(cars?.licenseplate)
@@ -52,15 +55,15 @@ class MainActivity : AppCompatActivity() {
     }
     private fun updateinfo (view: View){
         binding.apply {
-            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
+            var cars = if (globalVar == 1) Car1 else if (globalVar == 2) Car2 else Car3
             var button = if (globalVar == 1) car1Button else if (globalVar == 2) car2Button else car3Button
 
             cars?.name = name.text.toString()
             cars?.licenseplate = licensePlate.text.toString()
             cars?.brand = brand.text.toString()
-            button.text = if(licensePlate.text.toString()=="") "ว่าง" else licensePlate.text.toString()
+            button.text = if(cars?.licenseplate=="") "ว่าง" else cars?.licenseplate
             invalidateAll()
-
+            infoCar = cars
             Gone()
         }
 
@@ -68,13 +71,14 @@ class MainActivity : AppCompatActivity() {
     }
     private fun delinfo (view: View){
         binding.apply {
-            var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
+            var cars = if (globalVar == 1) Car1 else if (globalVar == 2) Car2 else Car3
             var button = if (globalVar == 1) car1Button else if (globalVar == 2) car2Button else car3Button
 
             cars?.licenseplate = ""
             cars?.brand = ""
             cars?.name = ""
             button.text = "ว่าง"
+            infoCar = cars
             Gone()
 
         }
