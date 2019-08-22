@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import buu.informatics.s59160965.parking.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        Gone()
         binding.apply {
             car1Button.setOnClickListener {
                 globalVar = 1
@@ -46,12 +47,7 @@ class MainActivity : AppCompatActivity() {
             brand.setText(cars?.brand)
             licensePlate.setText(cars?.licenseplate)
 
-            delButton.visibility = View.VISIBLE
-            updateButton.visibility = View.VISIBLE
-            name.visibility = View.VISIBLE
-            licensePlate.visibility = View.VISIBLE
-            brand.visibility = View.VISIBLE
-
+            Visible()
         }
     }
     private fun updateinfo (view: View){
@@ -59,17 +55,13 @@ class MainActivity : AppCompatActivity() {
             var cars = if (globalVar == 1) car1 else if (globalVar == 2) car2 else car3
             var button = if (globalVar == 1) car1Button else if (globalVar == 2) car2Button else car3Button
 
-            cars?.name = name.toString()
-            cars?.licenseplate = licensePlate.toString()
-            cars?.brand = brand.toString()
-            button.text = cars?.licenseplate
+            cars?.name = name.text.toString()
+            cars?.licenseplate = licensePlate.text.toString()
+            cars?.brand = brand.text.toString()
+            button.text = licensePlate.text.toString()
             invalidateAll()
 
-            delButton.visibility = View.GONE
-            updateButton.visibility = View.GONE
-            name.visibility = View.GONE
-            licensePlate.visibility = View.GONE
-            brand.visibility = View.GONE
+            Gone()
         }
 
 
@@ -83,14 +75,28 @@ class MainActivity : AppCompatActivity() {
             cars?.brand = ""
             cars?.name = ""
             button.setText("ว่าง")
+            Gone()
 
+        }
+
+    }
+    private fun Gone(){
+        binding.apply {
             delButton.visibility = View.GONE
             updateButton.visibility = View.GONE
             name.visibility = View.GONE
             licensePlate.visibility = View.GONE
             brand.visibility = View.GONE
         }
-
+    }
+    private fun Visible(){
+        binding.apply {
+            delButton.visibility = View.VISIBLE
+            updateButton.visibility = View.VISIBLE
+            name.visibility = View.VISIBLE
+            licensePlate.visibility = View.VISIBLE
+            brand.visibility = View.VISIBLE
+        }
     }
 }
 

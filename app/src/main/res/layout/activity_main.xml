@@ -73,7 +73,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/car2_button"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
         <EditText
                 android:id="@+id/brand"
@@ -90,7 +90,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/license_plate"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
         <EditText
                 android:id="@+id/name"
@@ -107,7 +107,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/brand"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
         <Button
                 android:id="@+id/update_button"
@@ -119,7 +119,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
         <Button
                 android:id="@+id/del_button"
@@ -131,7 +131,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/update_button"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
